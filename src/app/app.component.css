@@ -1,54 +1,63 @@
 .container {
-    display: grid;
-    grid-template-columns: 50% auto;
+  display: grid;
+  grid-template-columns: 50% auto;
 }
-.col {
-    padding: .4em 1.3em;
-}
+
 .color-dark {
-    background: #2885C4;
+  background: #2885C4;
 }
+
 .color-light {
-    background: #57B3F1;
+  background: #57B3F1;
 }
+
 input.radio {
-    border: 0;
-    padding: 1em;
- 
-    margin-bottom: 2em;
+  border: 0;
+  padding: 1em;
+  margin-bottom: 2em;
 }
+
 input.txt {
-    border: 0;
-    padding: 1em;
-    width: 40%;
-    margin-bottom: 2em;
-    margin-right: 2em;
+  border: 0;
+  padding: 1em;
+  margin-bottom: 2em;
+  margin-right: 2em;
 }
+
 input.btn {
-    border: 0;
-    display:block;
-    padding:1em 3em;
-    background:#A5F883;
-    color:#003A61;
-    margin-bottom:1em;
-    cursor:pointer;
-    font-weight:bold;
+  border: 0;
+  display: block;
+  padding: 1em 3em;
+  background: #2885C4;
+  color: #003A61;
+  margin-bottom: 1em;
+  cursor: pointer;
+  font-weight: bold;
 }
+
 .operator-container {
-    background:#3FA0E1;
-    padding:.5em;
-    font-weight:bold;
-    cursor:pointer;
-    margin: 0;
+  background: #3FA0E1;
+  padding: .5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.operator-container-head {
+  background: #003A61;
+  padding: .5em;
+  font-weight: bold;
+  margin: 0;
+  margin-left: .5em;
 }
 
 .operator-container-success {
-    background:rgb(60, 223, 114);
-    padding:.5em;
-    font-weight:bold;
-    margin: 5em;
+  background: rgb(60, 223, 114);
+  padding: .2em;
+  font-weight: bold;
+  margin: 0;
 }
-.errorText {
-    color : brown;
-    font-weight: bold;
+
+.error-text {
+  color: brown;
+  font-weight: lighter;
 }

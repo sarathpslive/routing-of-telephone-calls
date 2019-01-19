@@ -1,67 +1,64 @@
 <div class="container color-dark">
-  <div class="col">
+  <div>
     <p>Programming exercise - Routing of
       telephone calls</p>
   </div>
 </div>
-<div class="container color-light">
-  <div class="col">
-    <p>Need to find the cheapest operator ?</p>
-    <form>
-      <input type="text" class="txt" name="item" placeholder="enter phone number here" [(ngModel)]="phoneNumber">
-      <input type="submit" class="btn" value="find operator" (click)="checkCheapestOperator()">
-    </form>
-  </div>
-  <div class="col" *ngIf="cheapestOperator">
-    <p class="operator-container-success">{{cheapestOperator}} is the cheapest operator</p>
+<div class="color-light">
+  <div>
+    <p>need to find the cheapest operator ?</p>
+    <input type="number" class="txt" name="item" (keyup)="checkCheapestOperator()" placeholder="enter phone number here"
+      [(ngModel)]="phoneNumber">
+    <span *ngIf="errorTextPhoneNumber" class="error-text">{{errorTextPhoneNumber}}</span>
+    <span *ngIf="cheapestOperator" class="operator-container-success">
+      {{cheapestOperator}}
+    </span>
   </div>
 </div>
-
-
 <div class="container color-dark">
-  <div class="col">
+  <div>
     <p>Operator A</p>
   </div>
-  <div class="col">
+  <div>
     <p>Operator B</p>
   </div>
 </div>
 <div class="container color-light">
-  <div class="col">
+  <div>
     <div class="container">
-      <div class="col">
-        <p class="operator-container"> Number Prefix</p>
+      <div>
+        <p class="operator-container-head">Prefix</p>
       </div>
-      <div class="col">
-        <p class="operator-container"> Cost (₹) </p>
+      <div>
+        <p class="operator-container-head">Cost</p>
       </div>
     </div>
     <div *ngFor="let item of operatorA; let i = index">
       <div class="container">
-        <div class="col">
+        <div>
           <p class="operator-container"> {{item.numberPrefix}}</p>
         </div>
-        <div class="col">
+        <div>
           <p class="operator-container"> {{item.cost}} ₹ </p>
         </div>
       </div>
     </div>
   </div>
-  <div class="col">
+  <div>
     <div class="container">
-      <div class="col">
-        <p class="operator-container"> Number Prefix</p>
+      <div>
+        <p class="operator-container-head">Prefix</p>
       </div>
-      <div class="col">
-        <p class="operator-container"> Cost (₹) </p>
+      <div>
+        <p class="operator-container-head">Cost</p>
       </div>
     </div>
     <div *ngFor="let item of operatorB; let i = index">
       <div class="container">
-        <div class="col">
+        <div>
           <p class="operator-container"> {{item.numberPrefix}}</p>
         </div>
-        <div class="col">
+        <div>
           <p class="operator-container"> {{item.cost}} ₹ </p>
         </div>
       </div>
@@ -69,22 +66,24 @@
   </div>
 </div>
 <div class="container color-dark">
-  <div class="col">
-    <p>add cost</p>
+  <div>
+    <p>Add New Prefix & Cost for Operators</p>
   </div>
 </div>
-<div class="container color-light">
-  <div class="col">
-    <p>add new values here! <span *ngIf="errorText" class="errorText">({{errorText}})</span></p>
-    <form>
-      <input type="number" class="txt" name="item" placeholder="enter new prefix" [(ngModel)]="newPrefix">
-      <input type="number" class="txt" name="item" placeholder="enter new cost" [(ngModel)]="newCost">
-      <input id="operatorA" class="radio" type="radio" name="operatorType" [(ngModel)]="operatorType" value="a" checked>
-      <label for="operatorA">Operator A</label>
-      <input id="operatorB" class="radio" type="radio" name="operatorType" [(ngModel)]="operatorType" value="b"> <label
-        for="operatorB">Operator B</label>
-      <input type="submit" class="btn" value="add cost" (click)="saveNewCost()">
-    </form>
+<div class="color-light">
+  <div>
+    <p>enter values here! <span *ngIf="errorTextAddCost" class="error-text">{{errorTextAddCost}}</span></p>
+    <input type="number" class="txt" name="item" placeholder="new prefix" [(ngModel)]="newPrefix">
+    <input type="number" class="txt" name="item" placeholder="new cost" [(ngModel)]="newCost">
+    <input id="operatorA" class="radio" type="radio" name="operatorType" [(ngModel)]="operatorType" value="a" checked>
+    <label for="operatorA">Operator A</label>
+    <input id="operatorB" class="radio" type="radio" name="operatorType" [(ngModel)]="operatorType" value="b">
+    <label for="operatorB">Operator B</label>
+    <input type="submit" class="btn" value="add cost" (click)="saveNewCost()">
   </div>
-
 </div>
+<div class="container color-dark">
+    <div>
+      <p>for source code click <a href="https://github.com/sarathpslive/routing-of-telephone-calls" target="_blank" >here</a></p>
+    </div>
+  </div>
