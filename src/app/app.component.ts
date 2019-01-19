@@ -13,7 +13,10 @@ export class AppComponent implements OnInit {
   newCost: number;
   newPrefix: number;
   operatorType: string;
-  errorText : string;
+  errorText: string;
+  cheapestOperator: string;
+  phoneNumber : number;
+  
   constructor() {
     this.aList = [{ "numberPrefix": 1, "cost": 0.9 }, { "numberPrefix": 268, "cost": 5.1 }, { "numberPrefix": 46, "cost": 0.17 }, { "numberPrefix": 4620, "cost": 0 }, { "numberPrefix": 468, "cost": 0.15 }, { "numberPrefix": 4631, "cost": 0.15 }, { "numberPrefix": 4673, "cost": 0.9 }, { "numberPrefix": 46732, "cost": 1.1 }];
     this.bList = [{ "numberPrefix": 1, "cost": 0.92 }, { "numberPrefix": 44, "cost": 0.5 }, { "numberPrefix": 46, "cost": 0.2 }, { "numberPrefix": 467, "cost": 1 }, { "numberPrefix": 48, "cost": 1.2 }];
@@ -38,14 +41,29 @@ export class AppComponent implements OnInit {
     }.bind(this));
   }
 
+  checkCheapestOperator() {
+
+    if(!this.phoneNumber)
+    return;
+
+    this.cheapestOperator = "Operator A";
+  }
 
   saveNewCost() {
-    if (!this.operatorType || !this.newCost || !this.newPrefix)
-     { 
-       this.errorText = "all fields are manadatory";
-       return;
-     }
-     this.errorText = "";
+    if (!this.newPrefix) {
+      this.errorText = "enter prefix!";
+      return;
+    }
+    if (!this.newCost) {
+      this.errorText = "enter cost!";
+      return;
+    }
+    if (!this.operatorType) {
+      this.errorText = "choose operator!";
+      return;
+    }
+
+    this.errorText = "";
     var obj = new Operator();
     obj.id = (this.operatorB.length + 1).toString();
     obj.cost = this.newCost;

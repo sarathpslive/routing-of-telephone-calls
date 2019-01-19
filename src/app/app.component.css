@@ -32,15 +32,22 @@ input.btn {
     color:#003A61;
     margin-bottom:1em;
     cursor:pointer;
+    font-weight:bold;
 }
 .operator-container {
     background:#3FA0E1;
     padding:.5em;
-    width: 50%;
     font-weight:bold;
     cursor:pointer;
+    margin: 0;
 }
 
+.operator-container-success {
+    background:rgb(60, 223, 114);
+    padding:.5em;
+    font-weight:bold;
+    margin: 5em;
+}
 .errorText {
     color : brown;
     font-weight: bold;
